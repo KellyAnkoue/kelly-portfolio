@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kelly Ankoue’s Digital Art</title>
+
+  <!-- Main & Carousel CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="carousel.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+</head>
+<body class="about-page">
+  <div class="page-wrapper">
+    <header>
+      <h1>Kelly Ankoue’s Portfolio</h1>
+      <p>UX Designer | Advocate for Inclusive Tech | Visual Storyteller</p>
+    </header>
+
+
+    <nav class="badges">
+      <a href="index.html" class="badge">About me</a>
+      <a href="resume.html" class="badge">📄 Resume</a>
+      <a href="projects.html" class="badge">📁 Projects</a>
+      <a href="graphic.html" class="badge">🎨 Graphic Design</a>
+      <a href="experience.html" class="badge">🧠 Experience & Leadership</a>
+      <a href="dig.html" class="badge">🖼️ Digital Art Work</a>
+    </nav>
+    
+    <div class="carousel-wrapper">
+      <h2 class="carousel-title">🖌️ Digital Art </h2>
+      <button class="arrow arrow-left" id="prev">&#8592;</button>
+      <div class="carousel">
+        <div class="carousel-inner" id="carousel-inner">
+          <figure>
+            <img src="images/2023-01-29 (8) (2).png" alt="Words Make Worlds" />
+            <figcaption>"Words Make Worlds"-Drawn in OneNote, this sketch captures the spirit of a church sermon that stirred something within me.
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="images/Screen Shot 2023-01-06 at 10.17.44 PM.png" alt="Shoot for the Stars" />
+            <figcaption>"Shoot for the Stars"- A tribute to Pop Smoke and his unforgettable phrase, 'Shoot for the stars, aim for the moon.' Designed in Windows OneNote.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/2023-01-30 (4) (1).png" alt="Musical Brain" />
+            <figcaption>"Musical Brain"- Visualizing the neurological power of music through this drawing, made in Windows OneNote.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/2023-01-30 (2).png" alt="Rose from Concrete" />
+            <figcaption>"Rose from Concrete"- This piece was inspired by Tupac’s The Rose That Grew from Concrete, a testament to resilience. Designed using Windows OneNote</figcaption>
+          </figure>
+          <figure>
+            <img src="images/2023-01-29 (2).png" alt="Sailboat and Sunset" />
+            <figcaption>"Sailboat and Sunset"- A serene sunset at sea, captured through digital strokes in Windows OneNote.-</figcaption>
+          </figure>
+          <figure>
+            <img src="images/Screenshot 2023-01-30 at 8.39.21 AM.png" alt="Purple Stars" />
+            <figcaption>"Purple Stars"- Personalized home and lock screen concepts, crafted in Figma.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <button class="arrow arrow-right" id="next">&#8594;</button>
+    </div>
+
+    <footer class="footer-contact">
+      <h3>Contact Me 📞</h3>
+      <div class="footer-links">
+        <a href="mailto:ka523@cornell.edu">📧 ka523@cornell.edu</a>
+        <a href="https://www.linkedin.com/in/kelly-ankoue-128665218/" target="_blank">🔗 LinkedIn</a>
+      </div>
+      <p>&copy; 2025 Kelly Ankoue | Designed with passion 💫</p>
+    </footer>
+  </div>
+
+  <script>
+    const carouselInner = document.getElementById('carousel-inner');
+    const slides = document.querySelectorAll('.carousel-inner figure');
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+
+    let currentSlide = 0;
+
+    // Update carousel position based on current slide index
+    function updateCarousel() {
+      const offset = -currentSlide * 100;
+      carouselInner.style.transform = `translateX(${offset}%)`;
+    }
+
+    // Event listener for the left arrow button
+    prev.addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
+
+    // Event listener for the right arrow button
+    next.addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      updateCarousel();
+    });
+
+    // Ensure the first slide shows correctly
+    updateCarousel();
+  </script>
+</body>
+</html>

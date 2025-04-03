@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graphic Gallery | Kelly Ankoue</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+</head>
+<body class="gallery-page">
+  <div class="page-wrapper">
+    <header>
+      <h1>Kelly Ankoue’s Portfolio</h1>
+      <p>UX Designer | Advocate for Inclusive Tech | Visual Storyteller</p>
+    </header>
+
+    <nav class="badges">
+      <a href="index.html" class="badge">About me</a>
+      <a href="resume.html" class="badge">📄 Resume</a>
+      <a href="projects.html" class="badge">📁 Projects</a>
+      <a href="graphic.html" class="badge">🎨 Graphic Design</a>
+      <a href="experience.html" class="badge">🧠 Experience & Leadership</a>
+      <a href="dig.html" class="badge">🖼️ Digital Art Work</a>
+    </nav>
+
+    <div class="gallery-wrapper">
+      <h2 class="gallery-title">🎨 Graphic Design Highlights</h2>
+      <div class="grid-gallery">
+        <figure>
+          <img src="images/Dark Green Modern Motivational Quote Instagram Post.jpg" alt="Motivational Quote Graphic" onclick="openCarousel(0)" />
+          <figcaption>Event flyer for Baraka Kwa Wimbo’s winter concert, featuring bold silhouettes and soft gradients to reflect the night’s spiritual and seasonal tone.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/Spring 2025 Tryouts.jpg" alt="Tryouts Flyer" onclick="openCarousel(1)" />
+          <figcaption>Recruitment flyer for Phenomenom Step Team’s Fall tryouts, blending internet aesthetics with cultural movement.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/3 (1).png" alt="2024 Wrapped" onclick="openCarousel(2)" />
+          <figcaption>Baraka’s 2024 Spring Concert promo: “One Body, One Sound.” Designed to celebrate unity, divine harmony, and collaboration.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/Frame a.png" alt="Soprano Poster" onclick="openCarousel(3)" />
+          <figcaption>Spotify Wrapped–inspired recap for my acappella group, capturing a joyful, music-filled semester.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/Frame b.png" alt="New Members Poster" onclick="openCarousel(4)" />
+          <figcaption>Semester Wrapped – Part 2 of 3. Highlighting rehearsals, new members, and shared rhythm.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/Frame h (1).png" alt="Songs Rehearsed" onclick="openCarousel(5)" />
+          <figcaption>Semester Wrapped – Part 3 of 3. Final installment celebrating Baraka’s joyful and impactful semester.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/Navy Elegant Flower Wedding Invitation Poster 2.PNG.png" alt="Spring Concert Poster" onclick="openCarousel(6)" />
+          <figcaption>Spring Concert promotion with soft gradients and expressive visuals.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/Workshop Flyer 10.12.23 (1) (2).png" alt="Step Workshop" onclick="openCarousel(7)" />
+          <figcaption>Step Workshop poster — inviting students to join and learn with Phenomenom Step Team.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/IMG_8390.jpg" alt="Giving Day" onclick="openCarousel(8)" />
+          <figcaption>Giving Day flyer encouraging donations to support our acappella group’s mission and performances.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- Carousel Modal -->
+    <div id="carouselModal" class="lightbox">
+      <span class="close-btn" onclick="closeLightbox()">&times;</span>
+      <span class="carousel-nav prev" onclick="changeCarousel(-1)">&#10094;</span>
+      <img id="carousel-img" src="" alt="Carousel View" style="width: auto; height: 80vh; max-height: 80vh; object-fit: contain; border-radius: 10px;" />
+      <span class="carousel-nav next" onclick="changeCarousel(1)">&#10095;</span>
+    </div>
+
+    <footer class="footer-contact">
+      <h3>Contact Me 📞</h3>
+      <div class="footer-links">
+        <a href="mailto:ka523@cornell.edu">📧 ka523@cornell.edu</a>
+        <a href="https://www.linkedin.com/in/kelly-ankoue-128665218/" target="_blank">🔗 LinkedIn</a>
+      </div>
+      <p>&copy; 2025 Kelly Ankoue | Designed with passion 💫</p>
+    </footer>
+  </div>
+
+  <script>
+    function closeLightbox() {
+      document.getElementById("carouselModal").style.display = "none";
+    }
+
+    const carouselImages = [
+      "images/Dark Green Modern Motivational Quote Instagram Post.jpg",
+      "images/Spring 2025 Tryouts.jpg",
+      "images/3 (1).png",
+      "images/Frame a.png",
+      "images/Frame b.png",
+      "images/Frame h (1).png",
+      "images/Navy Elegant Flower Wedding Invitation Poster 2.PNG.png",
+      "images/Workshop Flyer 10.12.23 (1) (2).png",
+      "images/IMG_8390.jpg"
+    ];
+
+    let currentIndex = 0;
+
+    function openCarousel(index) {
+      currentIndex = index;
+      document.getElementById("carousel-img").src = carouselImages[currentIndex];
+      document.getElementById("carouselModal").style.display = "flex";
+    }
+
+    function changeCarousel(step) {
+      currentIndex = (currentIndex + step + carouselImages.length) % carouselImages.length;
+      document.getElementById("carousel-img").src = carouselImages[currentIndex];
+    }
+  </script>
+</body>
+</html>
