@@ -1,0 +1,563 @@
+/* === Global Styles === */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    background-color: #121212;
+    color: #f5f5f5;
+  }
+  
+  .page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #121212;
+  }
+  
+  /* === Shared Header === */
+  header {
+    background: linear-gradient(90deg, #a1e3d8, #2f6069);
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #121212;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 0.5rem;
+  }
+  
+  /* === Navigation Bar === */
+  .badges {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    background-color: #1e1e1e;
+    flex-wrap: wrap;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .badge {
+    background-color: white;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .badge:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+  }
+  
+  /* === Footer === */
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    color: #aaa;
+    background-color: #1e1e1e;
+    width: 100%;
+    margin-top: auto;
+  }
+  
+  .footer-links a {
+    color: #f5f5f5 !important;
+    text-decoration: none !important;
+    margin: 0 0.5rem;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline !important;
+  }
+  
+  /* === About Page === */
+  .about-page .container {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  .about-page .image-section {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
+    flex-direction: column;
+  }
+  
+  .about-page .section {
+    width: 60%;
+  }
+  
+  .about-page .pic {
+    max-width: 75%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .about-page .section h2 {
+    font-size: 1.5rem;
+    color: #268090;
+    margin-bottom: 0.5rem;
+  }
+  
+  .about-page .section p {
+    font-size: 1rem;
+    color: #d3d3d3;
+    margin-bottom: 1.2rem;
+  }
+  
+  .about-page .section p:last-of-type {
+    margin-bottom: 2rem;
+  }
+  
+  /* === Gallery Wrapper === */
+  .gallery-wrapper {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #121212;
+  }
+  
+  .gallery-title {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    font-weight: 800;
+    color: #a1e3d8;
+  }
+  
+  .grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 0;
+  }
+  
+  .grid-gallery figure {
+    margin: 0;
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+  }
+  
+  .grid-gallery figure:hover {
+    transform: scale(1.03);
+  }
+  
+  .grid-gallery img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .grid-gallery figcaption {
+    padding: 1rem;
+    font-size: 0.95rem;
+    color: #d3d3d3;
+    text-align: left;
+    background-color: #222;
+    line-height: 1.4;
+  }
+  
+
+  /* Consistent header styling */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+  }
+  
+  /* === Carousel === */
+  .carousel-wrapper {
+    position: relative;
+    max-width: 800px;
+    margin: 2rem auto;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .carousel-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #f5f5f5;
+  }
+  
+  .carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+  }
+  
+  .carousel-inner figure {
+    min-width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .carousel-inner img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 0;
+  }
+  
+  figcaption {
+    margin-top: 0.5rem;
+    font-weight: 600;
+    color: #d3d3d3;
+    padding: 0.5rem;
+  }
+  
+  /* === Carousel Arrows === */
+  .arrow,
+  .carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background-color: transparent;
+    color: #f5f5f5;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .arrow:hover,
+  .carousel-nav:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .arrow-left,
+  .carousel-nav.prev {
+    left: 10px;
+  }
+  
+  .arrow-right,
+  .carousel-nav.next {
+    right: 10px;
+  }
+
+  .project {
+    margin-bottom: 3.5rem;
+    padding: 1.5rem;
+    background-color: #1f1f1f;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  
+  .project h3 {
+    color: #f5f5f5;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .project-images {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  
+  .project-images img {
+    max-width: 300px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  }
+  
+  .project p {
+    font-size: 1rem;
+    color: #d3d3d3;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 1rem;
+  }
+  
+
+  
+  
+  /* === Lightbox === */
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    overflow: hidden;
+  }
+  
+  .lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    display: block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  }
+  
+  
+  /* === Resume Page === */
+  .resume-page .resume-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    min-height: calc(100vh - 300px);
+  }
+  
+  .resume-page .resume-center h2 {
+    font-size: 2.2rem;
+    color: #f5f5f5;
+    margin-bottom: 1rem;
+  }
+  
+  .resume-page .resume-center p {
+    font-size: 1.1rem;
+    color: #d3d3d3;
+    margin-bottom: 2rem;
+  }
+  
+  .resume-page .resume-preview {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+  
+  .download-btn {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #121212;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin: 2rem 0 1.5rem;
+  }
+  
+  .download-btn:hover {
+    background-color: #d3d3d3;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    z-index: 1001;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .carousel-nav:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .carousel-nav.prev {
+    left: 20px;
+  }
+  
+  .carousel-nav.next {
+    right: 20px;
+  }
+  
+  
+  /* === Experience Page Styling === */
+.experience-page .experience-content {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  
+  .experience-page .experience-content img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 1rem auto;
+    display: block;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  }
+  
+  .experience-page .experience-content p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #d3d3d3;
+  }
+  .experience-page .experience-entry h2 {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #a1e3d8;
+    margin-bottom: 1rem;
+  }
+  
+//* === Notion-style Case Study Section === */
+.notion-case-study {
+    max-width: 700px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+    color: #d3d3d3;
+  }
+  
+  .case-title {
+    font-size: 2rem;
+    color: #268090;
+    text-align: left;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    padding-left: 5%;
+  }
+  
+  .case-logo {
+    display: block;
+    margin: 0 auto 2rem;
+    max-width: 120px;
+  }
+  
+  .case-body p {
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: left;
+    margin-bottom: 1.2rem;
+    padding: 3%;
+  }
+  
+  .case-body a {
+    color: #a1e3d8;
+    text-decoration: underline;
+  }
+  
+  
+  .case-logo {
+    display: block;
+    margin: 0 auto 2rem;
+    max-width: 200px;  /* Increased from 120px to 200px */
+    width: 100%;
+  }
+  
+  
+  /* === Responsive === */
+  @media (max-width: 768px) {
+    .about-page .container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .about-page .image-section {
+      padding: 1rem;
+    }
+  
+    .about-page .image-section img {
+      width: 70%;
+    }
+  
+    .about-page .section {
+      width: 90%;
+    }
+  
+    .resume-page .resume-center {
+      padding: 1rem;
+    }
+  
+    .resume-page .resume-preview {
+      width: 90%;
+    }
+  
+    .carousel-inner img {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .gallery-title {
+      font-size: 1.8rem;
+    }
+  
+    .grid-gallery figcaption {
+      font-size: 0.9rem;
+    }
+  }
+  
